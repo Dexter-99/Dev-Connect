@@ -1,0 +1,345 @@
+@import "config";
+@import "utilities";
+
+@mixin d-flex($type, $justify-type, $align-type) {
+  display: flex;
+  flex-direction: $type;
+  justify-content: $justify-type;
+  align-items: $align-type;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+ul {
+  list-style-type: none;
+}
+img {
+  width: 100%;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#navNavbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  &.opacity-present {
+    opacity: 0.8;
+  }
+  &.opacity-absent {
+    opacity: none;
+  }
+  z-index: 1;
+  border-bottom: solid 2px $primary-color;
+  #nav-content {
+    @include d-flex(row, space-between, center);
+    .fas {
+      color: $primary-color;
+    }
+    #dashboard {
+      padding: 1rem 0rem;
+    }
+    ul {
+      @include d-flex(row, none, none);
+      li {
+        margin: 0 0.35rem;
+        padding: 1rem 0.75rem;
+        font-size: 1.1rem;
+        font-weight: 400;
+        a {
+          color: white;
+          .fas {
+            margin-right: 0.3rem;
+          }
+          &.align {
+            @include d-flex(row, none, center);
+          }
+          &.active {
+            padding: 0.5rem 0;
+            border-bottom: solid 2px white;
+          }
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+#header {
+  position: relative;
+  background: url("../img/index-header-img-2.jpg") no-repeat center center/cover;
+  height: 100vh;
+  width: 100vw;
+  color: $white-color;
+  #dark-overlay {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    #header-content {
+      @include d-flex(column, center, center);
+      color: white;
+      width: 80%;
+      height: inherit;
+      margin: auto;
+      text-align: center;
+      #primary-heading {
+        font-size: 4rem;
+      }
+      #sub-heading {
+        height: 30px;
+        color: $primary-color;
+        margin-bottom: 1rem;
+      }
+      #buttons {
+        @include d-flex(row, none, none);
+
+        margin-top: 1.5rem;
+        a {
+          color: black;
+          padding: 0.6rem 1rem;
+          border-radius: 10px;
+        }
+        #login-btn {
+          margin-right: 0.75rem;
+          color: white;
+        }
+        #login-btn:hover {
+          background-color: $success-color;
+          transition: all 600ms ease;
+        }
+        #sign-btn:hover {
+          background-color: #bdbdbd;
+          transition: all 600ms ease;
+        }
+      }
+    }
+  }
+}
+#login,
+#register,
+#developers,
+#dashboard,
+#experience,
+#education,
+#profile {
+  height: 100%;
+  width: 100%;
+}
+.inner-content {
+  width: 60%;
+  padding: 1rem 1rem;
+  height: inherit;
+  margin: 4rem auto;
+  @include d-flex(column, flex-start, flex-start);
+  .fa-user {
+    border: solid 2px green;
+    border-radius: 50%;
+    padding: 0.75rem;
+    margin-right: 0.5rem;
+    &.dashboard {
+      border-radius: none;
+    }
+  }
+  .form {
+    width: 100%;
+  }
+  .input-group {
+    margin: 1.5rem 0rem;
+    &.url-input {
+      @include d-flex(row, none, center);
+    }
+    input,
+    textarea,
+    select {
+      padding: 0.6rem 0.75rem;
+      width: 100%;
+      border: solid 0.5px #999;
+      font-size: 1.3rem;
+      border-radius: 5px;
+      &::-webkit-input-placeholder {
+        color: #546e7a;
+      }
+    }
+  }
+  .btn {
+    &:hover {
+      background: lighten($success-color, 5%);
+      color: #333;
+    }
+  }
+  .developer {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 2fr 4fr 2fr;
+    grid-gap: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    img {
+      display: block;
+      height: 100%;
+    }
+    .developer-info {
+      @include d-flex(column, center, flex-start);
+      padding-left: 1rem;
+      .fa {
+        margin-right: 0.75rem;
+      }
+      h3 {
+        font-size: 24px;
+        margin-bottom: 1rem;
+      }
+      a {
+        margin-top: 1rem;
+      }
+    }
+  }
+  .dashboard-links {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    .btn {
+      margin-right: 0.5rem;
+      &:hover {
+        background-color: lighten($dark-color, 5%);
+        color: white;
+      }
+      .fas,
+      .fab {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  .btn {
+    &:hover {
+      background-color: lighten($danger-color, 5%);
+    }
+  }
+  .table {
+    width: 80%;
+    margin: 1rem 0rem;
+    margin-right: auto;
+    th {
+      padding: 1rem;
+      margin-left: 0.5rem;
+      background-color: $light-color;
+    }
+    td {
+      padding: 0.75rem 1rem;
+      margin-left: 0.5rem;
+    }
+  }
+  .fa {
+    margin-right: 0.5rem;
+  }
+  .btn-primary {
+    display: block;
+    margin-bottom: 1.5rem;
+    &:hover {
+      background-color: lighten($primary-color, 5%);
+      color: #333;
+    }
+  }
+  .btn-light {
+    &:hover {
+      background-color: lighten($dark-color, 5%);
+      color: white;
+    }
+    .fas {
+      margin-right: 0.5rem;
+    }
+  }
+  .url-link {
+    margin-right: 1.1rem;
+    &.fa-twitter {
+      color: #38a1f3;
+    }
+    &.fa-facebook {
+      color: #3b5998;
+    }
+    &.fa-youtube {
+      color: #c4302b;
+    }
+    &.fa-linkedin {
+      color: #0077b5;
+    }
+    &.fa-instagram {
+      color: #3f729b;
+    }
+  }
+  .profile-menu {
+    width: 100%;
+    color: white;
+    padding: 2rem;
+    height: inherit;
+    border-radius: 10px;
+    text-align: center;
+    @include d-flex(column, center, center);
+    margin: 1.3rem 0rem;
+    img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+    }
+    .profile-menu-icon {
+      @include d-flex(row, none, center);
+      margin-top: 1rem;
+    }
+    .fab {
+      color: white;
+      margin-right: 0.75rem;
+    }
+    .bio-p {
+      padding-bottom: 1.5rem;
+      border-bottom: solid 1px #546e7a;
+    }
+  }
+  .prsnl-info {
+    width: 100%;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    .info {
+      @include d-flex(column, flex-start, space-between);
+      padding: 2rem;
+      li {
+        border-bottom: solid 1px #546e7a;
+      }
+      .mb-1 {
+        margin-bottom: 1.5rem;
+      }
+      .mb-2 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .developer-skills {
+    &.col {
+      @include d-flex(column, center, flex-start);
+    }
+    &.row {
+      @include d-flex(row, space-between, center);
+    }
+    span {
+      margin-right: 0.75rem;
+    }
+    .fas {
+      margin-right: 0.75rem;
+      color: $success-color;
+    }
+  }
+}

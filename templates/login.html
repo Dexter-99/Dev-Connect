@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dev-Connect : Login</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navNavbar" class="bg-dark opacity-absent">
+      <div class="container">
+        <div id="nav-content">
+          <h2 id="dashboard">
+            <a href="./dashboard.html">
+              <i class="fas fa-code"></i> Dev-Connect
+            </a>
+          </h2>
+          <ul>
+            <li><a href="../templates/developers.html">Developers</a></li>
+            <li><a href="../templates/register.html">Register</a></li>
+            <li><a href="../templates/login.html " class="active">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="login">
+      <div class="inner-content">
+        <p class="lead bg-danger invalid">Invalid Credentials</p>
+        <h1 class="py-heading success">Sign In</h1>
+        <h2 class="sc-heading dark">
+          <i class="fas fa-user"></i> Sign Into Your Account
+        </h2>
+        <form action="" class="form">
+          <div class="input-group">
+            <input
+              type="email"
+              id="email"
+              name="Email Address"
+              placeholder="Email Address"
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              name="Password"
+              id="password"
+              placeholder="Password"
+            />
+          </div>
+        </form>
+        <input type="submit" value="Login" class="btn btn-primary">
+        <p>Don't have an Account ?<a href="../templates/register.html" class="success">Sign Up</a</p>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/6411353ab6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Welcome to the Dev-Connector</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navNavbar" class="bg-dark opacity-present">
+      <div class="container">
+        <div id="nav-content">
+          <h2 id="dashboard">
+            <a href="./dashboard.html">
+              <i class="fas fa-code"></i> Dev-Connect
+            </a>
+          </h2>
+          <ul>
+            <li><a href="../templates/developers.html">Developers</a></li>
+            <li>
+              <a href="../templates/register.html">Register</a>
+            </li>
+            <li><a href="../templates/login.html ">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="inner-content">
+        <h1 class="py-heading success">Create Your Profile</h1>
+        <p class="lead">
+          <i class="fas fa-user"></i>Let's get some information to make your
+          profile stand out
+        </p>
+        <small class="small-info">* Required</small>
+        <form action="" class="form">
+          <div class="input-group">
+            <select name="Professional-status" id="pro-status">
+              <option value="none">* Select Professional Status</option>
+              <option value="Front-end Developer">Front-end Developer</option>
+              <option value="Back-End Dveloper">Back-End Dveloper</option>
+              <option value="Full Stack Dveloper">Full Stack Dveloper</option>
+              <option value="Android Developer">Android Developer</option>
+              <option value="UI/UX Designer">UI/UX Designer</option>
+              <option value="Programmer">Programmer</option>
+            </select>
+            <label for="pro-status">
+              <small class="small-info"
+                >Give us an idea of where you are at in you career</small
+              >
+            </label>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              id="organization"
+              name="Organization"
+              placeholder="Organization"
+            />
+            <label for="organization">
+              <small class="small-info"
+                >Could be your own organization or one you work for</small
+              >
+            </label>
+          </div>
+          <div class="input-group">
+            <input
+              type="url"
+              name="Website"
+              id="website"
+              placeholder="Website"
+            />
+            <label for="website">
+              <small class="small-info"
+                >Could be your own or an organization website</small
+              >
+            </label>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              name="Location"
+              id="location"
+              placeholder="Location"
+            />
+            <label for="location">
+              <small class="small-info"
+                >City & state suggested (eg. Noida,UP)
+              </small>
+            </label>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              name="Skills"
+              id="skills"
+              placeholder="* Skills"
+            />
+            <label for="website">
+              <small class="small-info"
+                >Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+              </small>
+            </label>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              name="Github-Username"
+              id="github-user"
+              placeholder="Github Username"
+            />
+            <label for="website">
+              <small class="small-info"
+                >If you want your latest repos and a Github link, include your
+                username
+              </small>
+            </label>
+          </div>
+
+          <div class="input-group">
+            <textarea
+              name="Bio"
+              id="bio"
+              cols="30"
+              rows="10"
+              placeholder="A short bio of yourself"
+            ></textarea>
+            <label for="bio">
+              <small class="small-info">Tell us a little about yourself </small>
+            </label>
+          </div>
+          <P class="lead"
+            >Add Social Network Links
+            <small class="small-info">(Optional)</small>
+          </P>
+          <div class="input-group url-input">
+            <i class="fab fa-twitter fa-2x url-link"></i>
+            <input
+              type="url"
+              name="Twitter url"
+              id="twitter-url"
+              placeholder="Twitter URL"
+            />
+          </div>
+          <div class="input-group url-input">
+            <i class="fab fa-facebook fa-2x url-link"></i>
+            <input
+              type="url"
+              name="Facebook url"
+              id="facebook-url"
+              placeholder="Facebook URL"
+            />
+          </div>
+          <div class="input-group url-input">
+            <i class="fab fa-youtube fa-2x url-link"></i>
+            <input
+              type="url"
+              name="Youtube url"
+              id="youtube-url"
+              placeholder="Youtube URL"
+            />
+          </div>
+          <div class="input-group url-input">
+            <i class="fab fa-linkedin fa-2x url-link"></i>
+            <input
+              type="url"
+              name="LinkedIn url"
+              id="linkedin-url"
+              placeholder="LinkedIn URL"
+            />
+          </div>
+          <div class="input-group url-input">
+            <i class="fab fa-instagram fa-2x url-link"></i>
+            <input
+              type="url"
+              name="Instagram url"
+              id="instagram-url"
+              placeholder="Instagram URL"
+            />
+          </div>
+          <input type="submit" class="btn btn-primary" value="Submit" />
+          <a class="btn btn-light" href="../templates/dashboard.html"
+            ><i class="fas fa-arrow-left"></i>Go Back</a
+          >
+        </form>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/6411353ab6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>

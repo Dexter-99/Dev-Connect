@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dev-Connect : Add Experience</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navNavbar" class="bg-dark opacity-present">
+      <div class="container">
+        <div id="nav-content">
+          <h2 id="dashboard">
+            <a href="./dashboard.html">
+              <i class="fas fa-code"></i> Dev-Connect
+            </a>
+          </h2>
+          <ul>
+            <li><a href="../templates/developers.html">Developers</a></li>
+            <li>
+              <a href="../templates/register.html">Register</a>
+            </li>
+            <li><a href="../templates/login.html ">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="experience">
+      <div class="inner-content">
+        <h1 class="py-heading success">Add An Experience</h1>
+        <p class="lead">
+          <i class="fas fa-code-branch"></i>Add any developer/programming
+          positions that you had in the past
+        </p>
+        <small class="small-info">* Required</small>
+        <form action="" class="form">
+          <div class="input-group">
+            <input
+              type="text"
+              name="Job title"
+              id="job"
+              placeholder="* Job Title"
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              id="organization"
+              name="Organization"
+              placeholder="* Organization"
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              name="Location"
+              id="location"
+              placeholder="Location"
+            />
+          </div>
+          <div class="input-group">
+            <label for="from-date">From Date</label>
+            <input
+              type="date"
+              name="From-date"
+              id="from-date"
+              placeholder="dd-mm-yyyy"
+            />
+          </div>
+          <div class="input-group">
+            <label for="to-date">To-date</label>
+            <input
+              type="date"
+              name="To-date"
+              id="to-date"
+              placeholder="dd-mm-yyyy"
+            />
+          </div>
+          <div class="input-group">
+            <textarea
+              name="Job-Description"
+              id="job-Description"
+              cols="30"
+              rows="10"
+              placeholder="Job Description"
+            ></textarea>
+          </div>
+          <input type="submit" class="btn btn-primary" value="Submit" />
+          <a class="btn btn-light" href="../templates/dashboard.html"
+            ><i class="fas fa-arrow-left"></i>Go Back</a
+          >
+        </form>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/6411353ab6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>

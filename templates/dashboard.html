@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Welcome to the Dev-Connector</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navNavbar" class="bg-dark opacity-present">
+      <div class="container">
+        <div id="nav-content">
+          <h2 id="dashboard">
+            <a href="../templates/dashboard.html">
+              <i class="fas fa-code"></i> Dev-Connect
+            </a>
+          </h2>
+          <ul>
+            <li><a href="../templates/developers.html">Developers</a></li>
+            <li><a href="../templates/posts.html">Posts</a></li>
+            <li>
+              <a href="../templates/dashboard.html" class="align"
+                ><i class="fas fa-user"></i> <span>Dashboard</span></a
+              >
+            </li>
+            <li>
+              <a href="../templates/login.html " class="align"
+                ><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="dashboard">
+      <div class="inner-content">
+        <h1 class="py-heading success">Dashboard</h1>
+        <p class="lead">
+          <i class="fas fa-user dashboard"></i>Welcome Devansh Gera !
+        </p>
+        <div class="dashboard-links">
+          <a
+            href="../templates/create-profile.html"
+            class="btn btn-light active-btn"
+          >
+            <i class="fas fa-user-circle"></i>Edit Profile
+          </a>
+          <a href="../templates/experience.html" class="btn btn-light">
+            <i class="fab fa-black-tie"></i>Add Experience
+          </a>
+          <a href="../templates/education.html" class="btn btn-light">
+            <i class="fas fa-graduation-cap"></i>Add Education
+          </a>
+        </div>
+        <h2 class="sc-heading dark">Experience Credentials</h2>
+        <table class="table">
+          <thead>
+            <th>Company</th>
+            <th>Title</th>
+            <th>Years</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NCS</td>
+              <td>Back-End Developer</td>
+              <td>Feb-2019-Present</td>
+              <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+            <tr>
+              <td>Freelancer</td>
+              <td>Back-End Developer</td>
+              <td>Aug-2018-Present</td>
+              <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 class="sc-heading dark">Education Credentials</h2>
+        <table class="table">
+          <thead>
+            <th>School</th>
+            <th>Degree</th>
+            <th>Year</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>School 1</td>
+              <td>High School</td>
+              <td>2015</td>
+              <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+            <tr>
+              <td>School -2</td>
+              <td>Intermediate</td>
+              <td>2017</td>
+              <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+            <tr>
+              <td>JSS Academy of Technical Education</td>
+              <td>Under-Graduation</td>
+              <td>2018-Present</td>
+              <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-danger">
+          <i class="fa fa-trash" aria-hidden="true"></i>Delete My Account
+        </button>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/6411353ab6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>

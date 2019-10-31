@@ -26,7 +26,7 @@
   line-height: 1.2;
   font-weight: 300;
   margin-bottom: 1rem; }
-  .lead.invalid {
+  .lead.style-lead {
     color: white;
     width: 100%;
     margin-top: 1rem;
@@ -85,6 +85,9 @@
     color: #232f34; }
   .btn-danger {
     background-color: #dc3545;
+    color: #eceff1; }
+  .btn-dark {
+    background-color: #232f34;
     color: #eceff1; }
 
 .bg-dark {
@@ -146,6 +149,10 @@ a {
       color: #64dd17; }
     #navNavbar #nav-content #dashboard {
       padding: 1rem 0rem; }
+      #navNavbar #nav-content #dashboard a:hover {
+        color: #64dd17; }
+        #navNavbar #nav-content #dashboard a:hover .fas {
+          color: white; }
     #navNavbar #nav-content ul {
       display: flex;
       flex-direction: row;
@@ -250,12 +257,15 @@ a {
   .inner-content .form {
     width: 100%; }
   .inner-content .input-group {
-    margin: 1.5rem 0rem; }
+    width: 100%;
+    margin: 1.2rem 0rem; }
     .inner-content .input-group.url-input {
       display: flex;
       flex-direction: row;
       justify-content: none;
       align-items: center; }
+    .inner-content .input-group textarea {
+      height: 100px; }
     .inner-content .input-group input,
     .inner-content .input-group textarea,
     .inner-content .input-group select {
@@ -404,3 +414,37 @@ a {
   .inner-content .developer-skills .fas {
     margin-right: 0.75rem;
     color: #09af00; }
+  .inner-content .btn-dark:hover {
+    background-color: #384b52;
+    color: white; }
+  .inner-content .btn-dark .fas {
+    margin-right: 0.5rem; }
+  .inner-content .post {
+    width: 100%;
+    padding: 1.5rem 0;
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-gap: 1rem;
+    border: solid 1px #999;
+    border-radius: 10px; }
+    .inner-content .post .person {
+      padding: 1rem;
+      text-align: center; }
+      .inner-content .post .person img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px; }
+    .inner-content .post .content {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start; }
+      .inner-content .post .content .rate {
+        margin-top: 1rem; }
+        .inner-content .post .content .rate button {
+          margin-right: 1rem; }
+        .inner-content .post .content .rate .btn {
+          margin-top: 1rem;
+          text-align: center; }

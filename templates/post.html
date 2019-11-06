@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Welcome to the Dev-Connector</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navNavbar" class="bg-dark opacity-present">
+      <div class="container">
+        <div id="nav-content">
+          <h2 id="dashboard">
+            <a href="../templates/dashboard.html">
+              <i class="fas fa-code"></i> Dev-Connect
+            </a>
+          </h2>
+          <ul>
+            <li><a href="../templates/developers.html">Developers</a></li>
+            <li><a href="../templates/posts.html">Posts</a></li>
+            <li>
+              <a href="../templates/dashboard.html" class="align"
+                ><i class="fas fa-user"></i> <span>Dashboard</span></a
+              >
+            </li>
+            <li>
+              <a href="../templates/login.html " class="align"
+                ><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="dashboard">
+      <div class="inner-content">
+        <a href="../templates/posts.html" class="btn btn-light"
+          ><i class="fas fa-arrow-left"></i>Back To Posts</a
+        >
+        <div class="post bg-light">
+          <div class="person">
+            <img src="../img/dev_two.jpg" alt="Vikas Verma" />
+            <strong class="dark">Vikas Verma</strong>
+          </div>
+          <div class="content">
+            <div class="info">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+                numquam laborum optio tempore possimus voluptas modi beatae!
+                Doloremque, sapiente commodi.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="lead bg-primary style-lead">Leave a Comment</p>
+        <form action="" class="form">
+          <div class="input-group">
+            <textarea
+              name="Comment"
+              id="comment"
+              cols="10"
+              rows="10"
+              placeholder="Comment on this post"
+            ></textarea>
+          </div>
+          <input type="submit" value="Submit" class="btn btn-dark" />
+        </form>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/6411353ab6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>

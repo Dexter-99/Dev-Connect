@@ -28,7 +28,7 @@
   line-height: 1.2;
   font-weight: 300;
   margin-bottom: 1rem;
-  &.invalid {
+  &.style-lead {
     color: white;
     width: 100%;
     margin-top: 1rem;
@@ -104,6 +104,10 @@
   }
   &-danger {
     background-color: $danger-color;
+    color: $light-color;
+  }
+  &-dark {
+    background-color: $dark-color;
     color: $light-color;
   }
 }

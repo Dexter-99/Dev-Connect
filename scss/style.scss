@@ -48,6 +48,14 @@ a {
     }
     #dashboard {
       padding: 1rem 0rem;
+      a {
+        &:hover {
+          color: $primary-color;
+          .fas {
+            color: white;
+          }
+        }
+      }
     }
     ul {
       @include d-flex(row, none, none);
@@ -159,9 +167,13 @@ a {
     width: 100%;
   }
   .input-group {
-    margin: 1.5rem 0rem;
+    width: 100%;
+    margin: 1.2rem 0rem;
     &.url-input {
       @include d-flex(row, none, center);
+    }
+    textarea {
+      height: 100px;
     }
     input,
     textarea,
@@ -340,6 +352,48 @@ a {
     .fas {
       margin-right: 0.75rem;
       color: $success-color;
+    }
+  }
+  .btn-dark {
+    &:hover {
+      background-color: lighten($dark-color, 10%);
+      color: white;
+    }
+    .fas {
+      margin-right: 0.5rem;
+    }
+  }
+  .post {
+    width: 100%;
+    padding: 1.5rem 0;
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-gap: 1rem;
+    border: solid 1px #999;
+    border-radius: 10px;
+    .person {
+      padding: 1rem;
+      text-align: center;
+      img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+      }
+    }
+    .content {
+      padding: 1rem;
+      @include d-flex(column, center, flex-start);
+      .rate {
+        margin-top: 1rem;
+        button {
+          margin-right: 1rem;
+        }
+        .btn {
+          margin-top: 1rem;
+          text-align: center;
+        }
+      }
     }
   }
 }

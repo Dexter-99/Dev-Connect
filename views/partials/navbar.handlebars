@@ -2,16 +2,20 @@
     <div class="container">
         <div id="nav-content">
             <h2 id="dashboard">
-                <a href="./dashboard.html">
+                <a href="dashboard">
                     <i class="fas fa-code"></i> Dev-Connect
                 </a>
+
             </h2>
             <ul>
                 <li>
-                    <a href="../templates/developers.html">Developers</a>
+                    <a href="/developer">Developers</a>
                 </li>
-                <li><a href="../templates/register.html">Register</a></li>
+                {{#if user}}
+                <li><a href="/auth/logout">Logout</a></li>
+                {{else}}
                 <li><a href="/login">Login</a></li>
+                {{/if}}
             </ul>
         </div>
     </div>

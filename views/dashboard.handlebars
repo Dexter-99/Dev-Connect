@@ -2,16 +2,16 @@
     <div class="inner-content">
         <h1 class="py-heading success">Dashboard</h1>
         <p class="lead">
-            <i class="fas fa-user dashboard"></i>Welcome Devansh Gera !
+            <i class="fas fa-user dashboard"></i>Welcome {{user.firstName}}
         </p>
         <div class="dashboard-links">
-            <a href="../templates/create-profile.html" class="btn btn-light active-btn">
+            <a href="/createprofile" class="btn btn-light active-btn">
                 <i class="fas fa-user-circle"></i>Edit Profile
             </a>
-            <a href="../templates/experience.html" class="btn btn-light">
+            <a href="experience" class="btn btn-light">
                 <i class="fab fa-black-tie"></i>Add Experience
             </a>
-            <a href="../templates/education.html" class="btn btn-light">
+            <a href="education" class="btn btn-light">
                 <i class="fas fa-graduation-cap"></i>Add Education
             </a>
         </div>
@@ -38,8 +38,8 @@
                 </tr>
             </tbody>
         </table>
-        <h2 class="sc-heading dark">Education Credentials</h2>
-        <table class="table">
+        <h2 class="sc-heading dark ">Education Credentials</h2>
+        <table class="table edu-table">
             <thead>
                 <th>School</th>
                 <th>Degree</th>
@@ -48,27 +48,45 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>School 1</td>
-                    <td>High School</td>
-                    <td>2015</td>
+                    <td class="school"></td>
+                    <td class="degree"></td>
+                    <td class="from"></td>
+                    <td class="to"></td>
                     <td><button class="btn btn-danger">Delete</button></td>
                 </tr>
-                <tr>
+                {{!-- <tr>
                     <td>School -2</td>
                     <td>Intermediate</td>
                     <td>2017</td>
                     <td><button class="btn btn-danger">Delete</button></td>
-                </tr>
-                <tr>
+                </tr> --}}
+                {{!-- <tr>
                     <td>JSS Academy of Technical Education</td>
                     <td>Under-Graduation</td>
                     <td>2018-Present</td>
                     <td><button class="btn btn-danger">Delete</button></td>
-                </tr>
+                </tr> --}}
             </tbody>
         </table>
         <button class="btn btn-danger">
             <i class="fa fa-trash" aria-hidden="true"></i>Delete My Account
         </button>
     </div>
+    {{!-- <div>{{education}}</div> --}}
 </section>
+<script>
+    let edutable = document.querySelector(".edu-table");
+    let school = document.querySelector(".school");
+    let degree = document.querySelector(".degree");
+    let from = document.querySelector(".from")
+    let to = document.querySelector(".to");
+    fetch("/education/data").then((res) => res.json()).then(data => {
+        console.log(data);
+        school.textContent = data.school;
+        degree.textContent = data.degree;
+        from.textContent = data.from;
+        to.textContent = data.to
+
+    })
+
+</script>

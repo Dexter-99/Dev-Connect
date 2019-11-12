@@ -1,0 +1,36 @@
+<section id="education">
+    <div class="inner-content">
+        <h1 class="py-heading success">Add Your Education</h1>
+        <p class="lead">
+            <i class="fas fa-graduation-cap"></i> Add any School/College that you
+            have Attended.
+        </p>
+        <small class="small-inf
+        o">* Required</small>
+        <form action="/education" method="POST" class="form">
+            <div class="input-group">
+                <input type="text" name="school" id="school" placeholder="*School or College" />
+            </div>
+            <div class="input-group">
+                <input type="text" id="degree" name="degree" placeholder="Degree or Certificate" />
+            </div>
+            <div class="input-group">
+                <input type="text" name="field" id="field" placeholder="Field Of Study" />
+            </div>
+            <div class="input-group">
+                <label for="from-date">From Date</label>
+                <input type="date" name="from" id="from-date" placeholder="dd-mm-yyyy" />
+            </div>
+            <div class="input-group">
+                <label for="to-date">To-date</label>
+                <input type="date" name="to" id="to-date" placeholder="dd-mm-yyyy" />
+            </div>
+            <div class="input-group">
+                <textarea name="achievements" id="achieve" cols="30" rows="10"
+                    placeholder="Your achievements"></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit" />
+            <a class="btn btn-light" href="../templates/dashboard.html"><i class="fas fa-arrow-left"></i>Go Back</a>
+        </form>
+    </div>
+</section>

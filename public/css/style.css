@@ -404,3 +404,10 @@ a {
   .inner-content .developer-skills .fas {
     margin-right: 0.75rem;
     color: #09af00; }
+
+.popup {
+  background-color: red;
+  width: 100vw;
+  position: fixed;
+  top: 71px;
+  z-index: 2; }

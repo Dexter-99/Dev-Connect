@@ -343,3 +343,11 @@ a {
     }
   }
 }
+//Dashboard Pop-up
+.popup {
+  background-color: red;
+  width: 100vw;
+  position: fixed;
+  top: 71px;
+  z-index: 2;
+}

@@ -6,9 +6,9 @@
             profile stand out
         </p>
         <small class="small-info">* Required</small>
-        <form action="" class="form">
+        <form action="/createprofile" method="POST" class="form">
             <div class="input-group">
-                <select name="Professional-status" id="pro-status">
+                <select name="professionalstatus" id="pro-status">
                     <option value="none">* Select Professional Status</option>
                     <option value="Front-end Developer">Front-end Developer</option>
                     <option value="Back-End Dveloper">Back-End Dveloper</option>
@@ -22,33 +22,33 @@
                 </label>
             </div>
             <div class="input-group">
-                <input type="text" id="organization" name="Organization" placeholder="Organization" />
+                <input type="text" id="organization" name="organization" placeholder="Organization" />
                 <label for="organization">
                     <small class="small-info">Could be your own organization or one you work for</small>
                 </label>
             </div>
             <div class="input-group">
-                <input type="url" name="Website" id="website" placeholder="Website" />
+                <input name="website" id="website" placeholder="Website" />
                 <label for="website">
                     <small class="small-info">Could be your own or an organization website</small>
                 </label>
             </div>
             <div class="input-group">
-                <input type="text" name="Location" id="location" placeholder="Location" />
+                <input type="text" name="location" id="location" placeholder="Location" />
                 <label for="location">
                     <small class="small-info">City & state suggested (eg. Noida,UP)
                     </small>
                 </label>
             </div>
             <div class="input-group">
-                <input type="text" name="Skills" id="skills" placeholder="* Skills" />
+                <input type="text" name="skills" id="skills" placeholder="* Skills" />
                 <label for="website">
                     <small class="small-info">Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
                     </small>
                 </label>
             </div>
             <div class="input-group">
-                <input type="text" name="Github-Username" id="github-user" placeholder="Github Username" />
+                <input type="text" name="githubhandle" id="github-user" placeholder="Github Username" />
                 <label for="website">
                     <small class="small-info">If you want your latest repos and a Github link, include your
                         username
@@ -57,7 +57,7 @@
             </div>
 
             <div class="input-group">
-                <textarea name="Bio" id="bio" cols="30" rows="10" placeholder="A short bio of yourself"></textarea>
+                <textarea name="bio" id="bio" cols="30" rows="10" placeholder="A short bio of yourself"></textarea>
                 <label for="bio">
                     <small class="small-info">Tell us a little about yourself </small>
                 </label>
@@ -67,23 +67,23 @@
             </P>
             <div class="input-group url-input">
                 <i class="fab fa-twitter fa-2x url-link"></i>
-                <input type="url" name="Twitter url" id="twitter-url" placeholder="Twitter URL" />
+                <input name="twitter" id="twitter-url" placeholder="Twitter URL" />
             </div>
             <div class="input-group url-input">
                 <i class="fab fa-facebook fa-2x url-link"></i>
-                <input type="url" name="Facebook url" id="facebook-url" placeholder="Facebook URL" />
+                <input name="facebook" id="facebook-url" placeholder="Facebook URL" />
             </div>
             <div class="input-group url-input">
                 <i class="fab fa-youtube fa-2x url-link"></i>
-                <input type="url" name="Youtube url" id="youtube-url" placeholder="Youtube URL" />
+                <input name="youtube" id="youtube-url" placeholder="Youtube URL" />
             </div>
             <div class="input-group url-input">
                 <i class="fab fa-linkedin fa-2x url-link"></i>
-                <input type="url" name="LinkedIn url" id="linkedin-url" placeholder="LinkedIn URL" />
+                <input name="linkedin" id="linkedin-url" placeholder="LinkedIn URL" />
             </div>
             <div class="input-group url-input">
                 <i class="fab fa-instagram fa-2x url-link"></i>
-                <input type="url" name="Instagram url" id="instagram-url" placeholder="Instagram URL" />
+                <input name="instagram" id="instagram-url" placeholder="Instagram URL" />
             </div>
             <input type="submit" class="btn btn-primary" value="Submit" />
             <a class="btn btn-light" href="../templates/dashboard.html"><i class="fas fa-arrow-left"></i>Go Back</a>

@@ -15,7 +15,7 @@ router.post("/", (req, res) => {
     description: req.body.description
   };
   new exp(newExp).save().then(item => {
-    res.send(item);
+    res.redirect("/dashboard");
   });
 });
 

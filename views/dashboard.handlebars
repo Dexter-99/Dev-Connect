@@ -5,9 +5,18 @@
             <i class="fas fa-user dashboard"></i>Welcome {{user.firstName}}
         </p>
         <div class="dashboard-links">
+            {{#if profile}}
+            <form action="/profile/edit/{{profile.id}}?_method=put" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <button type="submit" class="btn btn-light active-btn">
+                    <i class="fas fa-user-circle"></i>Edit Profile
+                </button>
+            </form>
+            {{else}}
             <a href="/createprofile" class="btn btn-light active-btn">
-                <i class="fas fa-user-circle"></i>Edit Profile
+                <i class="fas fa-user-circle"></i>Create Profile
             </a>
+            {{/if }}
             <a href="experience" class="btn btn-light">
                 <i class="fab fa-black-tie"></i>Add Experience
             </a>

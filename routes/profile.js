@@ -33,5 +33,12 @@ router.get("/:id", (req, res) => {
       res.sendStatus(500);
     });
 });
+router.put("/edit/:id", (req, res) => {
+  profile.findOne({ _id: req.params.id }).then(item =>
+    res.render("editprofile", {
+      profile: item
+    })
+  );
+});
 
 module.exports = router;

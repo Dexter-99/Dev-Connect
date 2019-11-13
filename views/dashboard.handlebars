@@ -25,18 +25,7 @@
                 <th></th>
             </thead>
             <tbody class="exptable">
-                {{!-- <tr>
-                    <td>NCS</td>
-                    <td>Back-End Developer</td>
-                    <td>Feb-2019-Present</td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                </tr>
-                <tr>
-                    <td>Freelancer</td>
-                    <td>Back-End Developer</td>
-                    <td>Aug-2018-Present</td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                </tr> --}}
+
             </tbody>
         </table>
         <h2 class="sc-heading dark ">Education Credentials</h2>
@@ -53,27 +42,20 @@
                     <td class="degree"></td>
                     <td class="from"></td>
                     <td class="to"></td>
-                    <td><button class="btn btn-danger">Delete</button></td>
+                    <td>
+                        <form class="edu-delete" method="POST">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
-                {{!-- <tr>
-                    <td>School -2</td>
-                    <td>Intermediate</td>
-                    <td>2017</td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                </tr> --}}
-                {{!-- <tr>
-                    <td>JSS Academy of Technical Education</td>
-                    <td>Under-Graduation</td>
-                    <td>2018-Present</td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                </tr> --}}
+
             </tbody>
         </table>
-        <button class="btn btn-danger">
+        <button type="submit" class="btn btn-danger">
             <i class="fa fa-trash" aria-hidden="true"></i>Delete My Account
         </button>
     </div>
-    {{!-- <div>{{education}}</div> --}}
+
 </section>
 <script>
     let edutable = document.querySelector(".edu-table");
@@ -82,6 +64,7 @@
     let degree = document.querySelector(".degree");
     let from = document.querySelector(".from")
     let to = document.querySelector(".to");
+    let form = document.createElement("form");
 
     fetch("/education/data").then((res) => res.json()).then(data => {
 
@@ -100,7 +83,14 @@
             let td3 = document.createElement("td");
             let td4 = document.createElement("td");
             let td5 = document.createElement("td");
-            let a = document.createElement("a");
+            let form = document.createElement("form");
+            form.setAttribute("action", "/experience/delete/" + item._id + `?_method=DELETE`)
+            form.setAttribute("method", "POST")
+            let a = document.createElement("button");
+            let input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", "_method");
+            input.setAttribute("value", "DELETE");
             td1.textContent = item.organization
             td2.textContent = item.job
             td3.textContent = item.from
@@ -108,8 +98,10 @@
             a.textContent = "Delete"
             a.classList.add("btn")
             a.classList.add("btn-danger")
-            a.setAttribute("href", `/experience/delete/${item._id}`);
-            td5.appendChild(a)
+            a.setAttribute("type", `Submit`);
+            form.appendChild(a);
+            form.appendChild(input)
+            td5.appendChild(form);
             tr.appendChild(td1)
             tr.appendChild(td2)
             tr.appendChild(td3)

@@ -37,4 +37,14 @@ router.get("/data/:id", (req, res) => {
       res.send(item);
     });
 });
+router.delete("/delete/:id", (req, res) => {
+  exp
+    .remove({
+      _id: req.params.id
+    })
+    .then(item => {
+      console.log(item);
+      res.redirect("/dashboard");
+    });
+});
 module.exports = router;

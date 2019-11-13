@@ -26,7 +26,9 @@ router.post("/", isAuthenticated, (req, res) => {
       res.redirect("/dashboard");
     })
     .catch(() => {
-      res.sendStatus(500);
+      res.send(
+        "Database Validation Failed Try Again Recheck The enteries carefully"
+      );
     });
 });
 module.exports = router;

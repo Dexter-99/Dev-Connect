@@ -37,3 +37,8 @@ function deletingEffect() {
 }
 
 typingEffect();
+
+// document.getElementById("exp").addEventListener("submit", function(e) {
+//   var skills = document.querySelector("#skills");
+//   console.log(skills);
+// });

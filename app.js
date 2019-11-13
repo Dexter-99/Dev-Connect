@@ -7,10 +7,11 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const fileStore = require("session-file-store")(session);
 const flash = require("connect-flash");
+const override = require("method-override");
 //Passport Config File
 require("./config/passport/passport")(passport);
 const app = express();
-
+app.use(override("_method"));
 app.use(
   session({
     store: new fileStore(),

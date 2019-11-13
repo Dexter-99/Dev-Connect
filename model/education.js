@@ -25,7 +25,7 @@ const educationSchema = new Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "usersDevconnects"
+    ref: "UsersDevConnect"
   }
 });
 module.exports = mongoose.model("Deveducation", educationSchema);

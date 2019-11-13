@@ -27,4 +27,14 @@ router.get("/data", isAuthenticated, (req, res) => {
     })
     .catch(() => res.status(500).send("Server Error"));
 });
+router.get("/data/:id", (req, res) => {
+  exp
+    .find({
+      user: req.params.id
+    })
+    .then(item => {
+      console.log(item);
+      res.send(item);
+    });
+});
 module.exports = router;

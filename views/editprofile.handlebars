@@ -1,12 +1,13 @@
 <section id="profile">
     <div class="inner-content mb-top">
-        <h1 class="py-heading success">Create Your Profile</h1>
+        <h1 class="py-heading success">Edit Your Profile</h1>
         <p class="lead">
             <i class="fas fa-user"></i>Let's get some information to make your
             profile stand out
         </p>
         <small class="small-info">* Required</small>
-        <form action="/createprofile" method="POST" class="form">
+        <form action="/profile/edit/{{profile.id}}/?_method=PUT" method="POST" class="form">
+            <input type="hidden" name="?_method" value="PUT">
             <div class="input-group">
                 <select name="professionalstatus" id="pro-status">
                     <option value="none">* Select Professional Status</option>
@@ -22,33 +23,35 @@
                 </label>
             </div>
             <div class="input-group">
-                <input type="text" id="organization" name="organization" placeholder="Organization" />
-                <label for="organization">
+                <input type="text" id="organization" name="organization" placeholder="Organization"
+                    value="{{profile.organization}}" />
+                <label for=" organization">
                     <small class="small-info">Could be your own organization or one you work for</small>
                 </label>
             </div>
             <div class="input-group">
-                <input name="website" id="website" placeholder="Website" />
+                <input name="website" id="website" value="{{profile.website}}" placeholder="Website" />
                 <label for="website">
                     <small class="small-info">Could be your own or an organization website</small>
                 </label>
             </div>
             <div class="input-group">
-                <input type="text" name="location" id="location" placeholder="Location" />
+                <input type="text" name="location" value="{{profile.location}}" id="location" placeholder="Location" />
                 <label for="location">
                     <small class="small-info">City & state suggested (eg. Noida,UP)
                     </small>
                 </label>
             </div>
             <div class="input-group">
-                <input type="text" name="skills" id="skills" placeholder="* Skills" />
+                <input type="text" name="skills" value="{{profile.skills}}" id="skills" placeholder="* Skills" />
                 <label for="website">
                     <small class="small-info">Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
                     </small>
                 </label>
             </div>
             <div class="input-group">
-                <input type="text" name="githubhandle" id="github-user" placeholder="Github Username" />
+                <input type="text" name="githubhandle" value={{profile.githubhandle}} id="github-user"
+                    placeholder="Github Username" />
                 <label for="website">
                     <small class="small-info">If you want your latest repos and a Github link, include your
                         username
@@ -57,7 +60,8 @@
             </div>
 
             <div class="input-group">
-                <textarea name="bio" id="bio" cols="30" rows="10" placeholder="A short bio of yourself"></textarea>
+                <textarea name="bio" id="bio" cols="30" rows="10"
+                    placeholder="A short bio of yourself">{{profile.bio}}</textarea>
                 <label for="bio">
                     <small class="small-info">Tell us a little about yourself </small>
                 </label>
@@ -67,23 +71,23 @@
             </P>
             <div class="input-group url-input">
                 <i class="fab fa-twitter fa-2x url-link"></i>
-                <input name="twitter" id="twitter-url" placeholder="Twitter URL" />
+                <input name="twitter" id="twitter-url" value="{{profile.twitter}}" placeholder=" Twitter URL" />
             </div>
             <div class="input-group url-input">
                 <i class="fab fa-facebook fa-2x url-link"></i>
-                <input name="facebook" id="facebook-url" placeholder="Facebook URL" />
+                <input name="facebook" id="facebook-url" value="{{profile.facebook}}" placeholder="Facebook URL" />
             </div>
             <div class="input-group url-input">
                 <i class="fab fa-youtube fa-2x url-link"></i>
-                <input name="youtube" id="youtube-url" placeholder="Youtube URL" />
+                <input name="youtube" id="youtube-url" value="{{profile.youtube}}" placeholder="Youtube URL" />
             </div>
             <div class="input-group url-input">
                 <i class="fab fa-linkedin fa-2x url-link"></i>
-                <input name="linkedin" id="linkedin-url" placeholder="LinkedIn URL" />
+                <input name="linkedin" id="linkedin-url" value="{{profile.linkedin}}" placeholder="LinkedIn URL" />
             </div>
             <div class="input-group url-input">
                 <i class="fab fa-instagram fa-2x url-link"></i>
-                <input name="instagram" id="instagram-url" placeholder="Instagram URL" />
+                <input name="instagram" id="instagram-url" value="{{profile.instagram}}" placeholder="Instagram URL" />
             </div>
             <input type="submit" class="btn btn-primary" value="Submit" />
             <a class="btn btn-light" href="../templates/dashboard.html"><i class="fas fa-arrow-left"></i>Go Back</a>

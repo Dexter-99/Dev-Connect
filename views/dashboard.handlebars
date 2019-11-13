@@ -6,12 +6,10 @@
         </p>
         <div class="dashboard-links">
             {{#if profile}}
-            <form action="/profile/edit/{{profile.id}}?_method=put" method="POST">
-                <input type="hidden" name="_method" value="PUT">
-                <button type="submit" class="btn btn-light active-btn">
-                    <i class="fas fa-user-circle"></i>Edit Profile
-                </button>
-            </form>
+
+            <a href="/profile/edit/{{profile.id}}" class="btn btn-light active-btn">
+                <i class="fas fa-user-circle"></i>Edit Profile
+            </a>
             {{else}}
             <a href="/createprofile" class="btn btn-light active-btn">
                 <i class="fas fa-user-circle"></i>Create Profile

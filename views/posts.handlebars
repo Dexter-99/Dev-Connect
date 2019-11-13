@@ -5,23 +5,23 @@
             <i class="fas fa-user dashboard"></i> Welcome to the Community
         </p>
         <p class="lead bg-primary style-lead">Say Something</p>
-        <form action="" class="form">
+        <form action="/posts" method="POST" class="form">
             <div class="input-group">
                 <textarea name="Post" id="post" placeholder="Say Something ..." cols="20" rows="10"></textarea>
             </div>
+            <input type="submit" value="Submit" class="btn btn-dark" />
+
         </form>
-        <input type="submit" value="Submit" class="btn btn-dark" />
+        {{#each posts}}
         <div class="post bg-light">
-            <div class="person">
-                <img src="../img/dev_two.jpg" alt="Vikas Verma" />
-                <strong class="dark">Vikas Verma</strong>
-            </div>
+            <strong class="dark">{{this.user.firstName}} {{this.user.lastName}}</strong>
+        </div>
+        <div class="person">
+            <img src="{{this.user.image}}" alt="Vikas Verma" />
             <div class="content">
                 <div class="info">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-                        numquam laborum optio tempore possimus voluptas modi beatae!
-                        Doloremque, sapiente commodi.
+                        {{this.postBody}}
                     </p>
                 </div>
                 <div class="rate">
@@ -35,5 +35,6 @@
                 </div>
             </div>
         </div>
+        {{/each}}
     </div>
 </section>

@@ -20,11 +20,12 @@
             <thead>
                 <th>Company</th>
                 <th>Title</th>
-                <th>Years</th>
+                <th>From</th>
+                <th>To</th>
                 <th></th>
             </thead>
-            <tbody>
-                <tr>
+            <tbody class="exptable">
+                {{!-- <tr>
                     <td>NCS</td>
                     <td>Back-End Developer</td>
                     <td>Feb-2019-Present</td>
@@ -35,7 +36,7 @@
                     <td>Back-End Developer</td>
                     <td>Aug-2018-Present</td>
                     <td><button class="btn btn-danger">Delete</button></td>
-                </tr>
+                </tr> --}}
             </tbody>
         </table>
         <h2 class="sc-heading dark ">Education Credentials</h2>
@@ -76,17 +77,46 @@
 </section>
 <script>
     let edutable = document.querySelector(".edu-table");
+    let exptable = document.querySelector(".exptable");
     let school = document.querySelector(".school");
     let degree = document.querySelector(".degree");
     let from = document.querySelector(".from")
     let to = document.querySelector(".to");
+
     fetch("/education/data").then((res) => res.json()).then(data => {
-        console.log(data);
+
         school.textContent = data.school;
         degree.textContent = data.degree;
         from.textContent = data.from;
         to.textContent = data.to
 
+    });
+
+    fetch("/experience/data").then(res => res.json()).then(data => {
+        data.forEach(item => {
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            let td3 = document.createElement("td");
+            let td4 = document.createElement("td");
+            let td5 = document.createElement("td");
+            let a = document.createElement("a");
+            td1.textContent = item.organization
+            td2.textContent = item.job
+            td3.textContent = item.from
+            td4.textContent = item.to
+            a.textContent = "Delete"
+            a.classList.add("btn")
+            a.classList.add("btn-danger")
+            a.setAttribute("href", `/experience/delete/${item._id}`);
+            td5.appendChild(a)
+            tr.appendChild(td1)
+            tr.appendChild(td2)
+            tr.appendChild(td3)
+            tr.appendChild(td4)
+            tr.appendChild(td5)
+            exptable.appendChild(tr);
+        })
     })
 
 </script>

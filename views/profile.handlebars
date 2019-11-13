@@ -3,10 +3,10 @@
         <a class="btn btn-light" href="/developer"><i class="fas fa-arrow-left"></i>Back to
             Profiles</a>
         <div class="profile-menu bg-primary">
-            <img src="../img/dev_two.jpg" alt="Vikas Verma" />
-            <h1 class="py-heading white">Vikas Verma</h1>
-            <p class="lead white">Front-End Developer</hp>
-                <p>Noida,India</p>
+            <img src="{{user.image}}" alt="Vikas Verma" />
+            <h1 class="py-heading white">{{user.firstName}} {{user.lastName}}</h1>
+            <p class="lead white">{{profile.professionalstatus}}</hp>
+                <p>{{profile.location}}</p>
                 <div class="profile-menu-icon">
                     <a traget="_blank" href="https://www.github.com"><i class="fab fa-github fa-2x"></i></a>
                     <a traget="_blank" href="https://www.linkedin.com"><i class="fab fa-linkedin fa-2x"></i></a>

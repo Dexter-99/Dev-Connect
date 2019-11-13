@@ -6,26 +6,26 @@
             positions that you had in the past
         </p>
         <small class="small-info">* Required</small>
-        <form action="" class="form">
+        <form action="/experience" method="POST" class="form">
             <div class="input-group">
-                <input type="text" name="Job title" id="job" placeholder="* Job Title" />
+                <input type="text" name="job" id="job" placeholder="* Job Title" />
             </div>
             <div class="input-group">
-                <input type="text" id="organization" name="Organization" placeholder="* Organization" />
+                <input type="text" id="organization" name="organization" placeholder="* Organization" />
             </div>
             <div class="input-group">
-                <input type="text" name="Location" id="location" placeholder="Location" />
+                <input type="text" name="location" id="location" placeholder="Location" />
             </div>
             <div class="input-group">
                 <label for="from-date">From Date</label>
-                <input type="date" name="From-date" id="from-date" placeholder="dd-mm-yyyy" />
+                <input type="date" name="from" id="from-date" placeholder="dd-mm-yyyy" />
             </div>
             <div class="input-group">
                 <label for="to-date">To-date</label>
-                <input type="date" name="To-date" id="to-date" placeholder="dd-mm-yyyy" />
+                <input type="date" name="to" id="to-date" placeholder="dd-mm-yyyy" />
             </div>
             <div class="input-group">
-                <textarea name="Job-Description" id="job-Description" cols="30" rows="10"
+                <textarea name="description" id="job-Description" cols="30" rows="10"
                     placeholder="Job Description"></textarea>
             </div>
             <input type="submit" class="btn btn-primary" value="Submit" />

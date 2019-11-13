@@ -30,7 +30,7 @@ app.use((req, res, next) => {
   next();
 });
 //Static Asset Middleware
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public/")));
 //Request Body Parser  Middleware
 app.use(express.json());
 app.use(

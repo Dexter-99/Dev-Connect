@@ -8,7 +8,7 @@ const profileSchema = new Schema({
   },
   professionalstatus: {
     type: String,
-    required: true
+    default: "Front-End Developer"
   },
   organization: {
     type: String,

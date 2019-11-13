@@ -28,15 +28,14 @@
             </div>
         </div>
         <div class="prsnl-info ">
-            <div class="info border bd-primary bg-light">
-                <h3 class="sc-heading primary">Experinces</h3>
+            <div class="info border bd-primary bg-light scroll">
+                <h3 class="sc-heading primary">Experiences</h3>
                 <ul class="exp-items">
 
-                    </li>
                 </ul>
 
             </div>
-            <div class="info border bd-primary bg-light">
+            <div  class="info border bd-primary bg-light scroll">
                 <h3 class="sc-heading primary">Education</h3>
                 <ul class="edu-items">
                     {{!-- <li>
@@ -79,10 +78,10 @@
                 let p2 = document.createElement("p");
                 let p3 = document.createElement("p");
                 p1.classList.add("mb-1");
-                p2.classList.add("mb-");
+                p2.classList.add("mb-1");
                 p3.classList.add("mb-1");
-                p1.innerHTML = "<strong>Degree</strong> " + item.degree
-                p2.innerHTML = "<strong>Field Of Study</strong>: " + item.field
+                p1.innerHTML = "<strong>Degree :</strong> " + item.degree
+                p2.innerHTML = "<strong>Field Of Study :</strong> " + item.field
                 li.appendChild(p1);
                 li.appendChild(p2)
                 document.querySelector(".edu-items").appendChild(li)

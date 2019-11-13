@@ -28,7 +28,6 @@ a {
   color: white;
   text-decoration: none;
 }
-
 #navNavbar {
   position: fixed;
   width: 100%;
@@ -140,11 +139,12 @@ a {
   height: 100%;
   width: 100%;
 }
+
 .inner-content {
   width: 60%;
   padding: 1rem 1rem;
   height: inherit;
-  margin: 4rem auto;
+  margin: 0 auto;
   @include d-flex(column, flex-start, flex-start);
   .fa-user {
     border: solid 2px green;
@@ -155,6 +155,7 @@ a {
       border-radius: none;
     }
   }
+
   .form {
     width: 100%;
   }
@@ -313,9 +314,13 @@ a {
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: 1fr 1fr;
+    .scroll {
+      overflow-x: hidden;
+    }
     .info {
       @include d-flex(column, flex-start, space-between);
       padding: 2rem;
+      height: 400px;
       li {
         border-bottom: solid 1px #546e7a;
       }
@@ -343,6 +348,9 @@ a {
     }
   }
 }
+.mb-top {
+  margin-top: 4rem;
+}
 //Dashboard Pop-up
 .popup {
   background-color: red;
@@ -350,4 +358,8 @@ a {
   position: fixed;
   top: 71px;
   z-index: 2;
+}
+.G-login {
+  font-size: 1.5rem;
+  border-radius: 4px;
 }

@@ -1,4 +1,5 @@
-.fas {
+.fas,
+.fab {
   margin-right: 0.5rem; }
 
 .container {
@@ -235,7 +236,7 @@ a {
   width: 60%;
   padding: 1rem 1rem;
   height: inherit;
-  margin: 4rem auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -377,12 +378,15 @@ a {
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: 1fr 1fr; }
+    .inner-content .prsnl-info .scroll {
+      overflow-x: hidden; }
     .inner-content .prsnl-info .info {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: space-between;
-      padding: 2rem; }
+      padding: 2rem;
+      height: 400px; }
       .inner-content .prsnl-info .info li {
         border-bottom: solid 1px #546e7a; }
       .inner-content .prsnl-info .info .mb-1 {
@@ -405,9 +409,16 @@ a {
     margin-right: 0.75rem;
     color: #09af00; }
 
+.mb-top {
+  margin-top: 4rem; }
+
 .popup {
   background-color: red;
   width: 100vw;
   position: fixed;
   top: 71px;
   z-index: 2; }
+
+.G-login {
+  font-size: 1.5rem;
+  border-radius: 4px; }

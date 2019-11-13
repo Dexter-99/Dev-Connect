@@ -3,8 +3,8 @@
         <a class="btn btn-light" href="/developer"><i class="fas fa-arrow-left"></i>Back to
             Profiles</a>
         <div class="profile-menu bg-primary">
-            <img src="{{user.image}}" alt="Vikas Verma" />
-            <h1 class="py-heading white">{{user.firstName}} {{user.lastName}}</h1>
+            <img src="{{profile.user.image}}" alt="Vikas Verma" />
+            <h1 class="py-heading white">{{profile.user.firstName}} {{profile.user.lastName}}</h1>
             <p class="lead white">{{profile.professionalstatus}}</hp>
                 <p>{{profile.location}}</p>
                 <div class="profile-menu-icon">
@@ -16,9 +16,8 @@
                 </div>
         </div>
         <div class="profile-menu bg-light border bd-primary dark">
-            <h3 class="sc-heading primary">Vikas Verma</h3>
-            <p class="dark bio-p">I am a IInd Year Student pursuing B.tech In Computer Science. I am Front-end Developer
-                Specializing in HTML,CSS,Javascript,Bootstrap,etc</p>
+            <h3 class="sc-heading primary">{{profile.user.firstName}} {{profile.user.lastName}}</h3>
+            <p class="dark bio-p">{{profile.bio}}</p>
             <h3 class="sc-heading primary">Skill Set</h3>
             <div class="developer-skills row dark">
                 <span><i class="fas fa-check"></i>HTML</span>
@@ -32,7 +31,7 @@
             <div class="info border bd-primary bg-light">
                 <h3 class="sc-heading primary">Experinces</h3>
                 <ul class="exp-items">
-                    <li class="mb-1"> <strong>Freelancing</strong>
+
                     </li>
                 </ul>
 
@@ -40,15 +39,54 @@
             <div class="info border bd-primary bg-light">
                 <h3 class="sc-heading primary">Education</h3>
                 <ul class="edu-items">
-                    <li>
+                    {{!-- <li>
                         <strong class>JSS Academy Of Technical Education</strong>
                         <p class="mb-1">Aug 2018-Present</p>
                         <p class="mb-2"><strong>Degree :</strong> B.TECH</p>
                         <p class="mb-2"><strong>Field Of Study :</strong> Computer Science</p>
                         <p class="mb-2"><strong>Description :</strong> Computer Science</p>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
     </div>
+    <script>
+        fetch("/experience/data/" + "{{ profile.user.id }}").then((data) => {
+            return data.json();
+        }).then(response => {
+
+            response.forEach(item => {
+                let li = document.createElement("li");
+                li.classList.add(".mb-1")
+                let str = document.createElement("strong")
+                str.textContent = item.job + " At " + item.organization
+                li.appendChild(str)
+                document.querySelector(".exp-items").appendChild(li)
+            })
+
+
+        });
+        fetch("/education/data/" + "{{profile.user.id}}").then((data) => {
+            return data.json();
+        }).then(response => {
+            response.forEach(item => {
+                console.log(item.school);
+                let li = document.createElement("li");
+                let str = document.createElement("strong")
+                str.textContent = item.school;
+                li.appendChild(str);
+                let p1 = document.createElement("p");
+                let p2 = document.createElement("p");
+                let p3 = document.createElement("p");
+                p1.classList.add("mb-1");
+                p2.classList.add("mb-");
+                p3.classList.add("mb-1");
+                p1.innerHTML = "<strong>Degree</strong> " + item.degree
+                p2.innerHTML = "<strong>Field Of Study</strong>: " + item.field
+                li.appendChild(p1);
+                li.appendChild(p2)
+                document.querySelector(".edu-items").appendChild(li)
+            })
+        })
+    </script>
 </section>

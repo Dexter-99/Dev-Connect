@@ -48,4 +48,14 @@ router.get("/data", (req, res) => {
       });
   } else res.send("Baba Ji Ka Thullu");
 });
+router.get("/data/:id", isAuthenticated, (req, res) => {
+  education
+    .find({
+      user: req.params.id
+    })
+    .then(item => {
+      res.send(item);
+    })
+    .catch(err => res.send(err));
+});
 module.exports = router;

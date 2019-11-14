@@ -128,6 +128,12 @@ a {
   color: white;
   text-decoration: none; }
 
+.sub-hd {
+  width: 100%;
+  padding: 0.75rem 0.6rem;
+  color: white;
+  border-radius: 5px; }
+
 #navNavbar {
   position: fixed;
   width: 100%;
@@ -408,6 +414,49 @@ a {
   .inner-content .developer-skills .fas {
     margin-right: 0.75rem;
     color: #09af00; }
+  .inner-content .btn-dark:hover {
+    background-color: #232f34;
+    color: white; }
+  .inner-content .post {
+    padding: 1.5rem;
+    margin: 1.2rem 0;
+    border-radius: 10px; }
+    .inner-content .post .person-post {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      grid-gap: 2.3rem;
+      align-items: center; }
+      .inner-content .post .person-post .user-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: none;
+        align-items: center;
+        height: 150px;
+        width: 150px;
+        padding: 0.75rem; }
+        .inner-content .post .person-post .user-image img {
+          height: 100%;
+          width: 100%;
+          border: none;
+          border-radius: 50%;
+          display: inline-block; }
+        .inner-content .post .person-post .user-image .dark {
+          font-weight: 600; }
+      .inner-content .post .person-post .content .info {
+        padding: 0.75rem 0; }
+        .inner-content .post .person-post .content .info p {
+          color: #232f34;
+          font-size: 1.2rem;
+          font-weight: 400; }
+      .inner-content .post .person-post .content .rate {
+        margin-bottom: 1rem; }
+        .inner-content .post .person-post .content .rate .btn-dark {
+          margin-right: 1rem; }
+        .inner-content .post .person-post .content .rate .discuss {
+          margin-top: 1rem;
+          width: 50%;
+          border-radius: 4px;
+          text-align: center; }
 
 .mb-top {
   margin-top: 4rem; }

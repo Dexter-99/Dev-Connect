@@ -3,23 +3,27 @@
         <a href="posts" class="btn btn-light"><i class="fas fa-arrow-left"></i>Back To Posts</a>
         <div class="post bg-light">
             <div class="person">
-                <img src="../img/dev_two.jpg" alt="Vikas Verma" />
-                <strong class="dark">Vikas Verma</strong>
+                <img src="{{post.user.image}}" alt="{{post.user.firstName}} {{post.user.lastName}}" />
+                <strong class="dark">{{post.user.firstName}} {{post.user.lastName}}</strong>
             </div>
             <div class="content">
                 <div class="info">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-                        numquam laborum optio tempore possimus voluptas modi beatae!
-                        Doloremque, sapiente commodi.
+                        {{post.postBody}}
                     </p>
                 </div>
             </div>
         </div>
+        <h1>Comments</h1>
+        {{#each comments}}
+
+        <div>{{this.commentBody}}</div>
+
+        {{/each}}
         <p class="lead bg-primary style-lead">Leave a Comment</p>
-        <form action="" class="form">
+        <form action="/post/{{post.id}}" method="POST" class="form">
             <div class="input-group">
-                <textarea name="Comment" id="comment" cols="10" rows="10" placeholder="Comment on this post"></textarea>
+                <textarea name="comment" id="comment" cols="10" rows="10" placeholder="Comment on this post"></textarea>
             </div>
             <input type="submit" value="Submit" class="btn btn-dark" />
         </form>

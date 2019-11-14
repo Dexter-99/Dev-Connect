@@ -6,7 +6,6 @@ router.get("/", isAuthenticated, (req, res) => {
     .find({})
     .populate("user")
     .then(item => {
-      console.log(item);
       res.render("posts", {
         posts: item
       });

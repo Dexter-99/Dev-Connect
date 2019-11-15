@@ -67,4 +67,16 @@ router.put("/edit/:id", (req, res) => {
       });
     });
 });
+router.get("/skills/:id", (req, res) => {
+  profile
+    .findOne({ _id: req.params.id })
+    .populate("user")
+    .then(item => {
+      let skills;
+      skills = item.skills;
+      let a = new Array();
+      a = skills.split(",");
+      res.send(a);
+    });
+});
 module.exports = router;

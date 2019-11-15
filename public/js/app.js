@@ -1,3 +1,5 @@
+import { close } from "inspector";
+
 const words = ["Post !", "Like !", "Comment !", "Share !"];
 let i = 0;
 let timer;
@@ -37,8 +39,3 @@ function deletingEffect() {
 }
 
 typingEffect();
-
-// document.getElementById("exp").addEventListener("submit", function(e) {
-//   var skills = document.querySelector("#skills");
-//   console.log(skills);
-// });

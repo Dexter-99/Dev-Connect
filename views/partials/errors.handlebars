@@ -1,5 +1,17 @@
 {{#if errors}}
 <div class="popup">
     <h1>{{errors}}</h1>
+    <a href="" class="close-btn"><i class="fas fa-times"></i></a>
 </div>
+<script>
+    //Popup Close
+let cancel = document.querySelector(".close-btn");
+let popup = document.querySelector(".popup");
+
+cancel.addEventListener("click", e => {
+  console.log("Closed");
+  e.preventDefault();
+  popup.style.display="none";
+});
+</script>
 {{/if}}

@@ -1,8 +1,8 @@
 <section id="dashboard">
     <div class="inner-content mb-top">
         <a href="/posts" class="btn btn-light"><i class="fas fa-arrow-left"></i>Back To Posts</a>
-        <div class="post bg-light">
-            <div class="person">
+        <div class="post bg-light post-comment">
+            <div class="user-image">
                 <img src="{{post.user.image}}" alt="{{post.user.firstName}} {{post.user.lastName}}" />
                 <strong class="dark">{{post.user.firstName}} {{post.user.lastName}}</strong>
             </div>
@@ -17,10 +17,23 @@
         <h1>Comments</h1>
         {{#each comments}}
 
-        <div>{{this.commentBody}}</div>
+        <div class="comment">
+            <div class="user-image">
+                <img src="{{this.commentUser.image}}"
+                    alt="{{this.commentUser.firstName}} {{this.commentUser.lastName}}" />
+                <strong class="dark">{{this.commentUser.firstName}} {{this.commentUser.lastName}}</strong>
+            </div>
+            <div class="content">
+                <div class="info">
+                    <p>
+                        {{this.commentBody}}
+                    </p>
+                </div>
+            </div>
+        </div>
 
         {{/each}}
-        <p class="lead bg-primary style-lead">Leave a Comment</p>
+        <p class="lead bg-danger style-lead sub-hd">Leave a Comment</p>
         <form action="/post/{{post.id}}" method="POST" class="form">
             <div class="input-group">
                 <textarea name="comment" id="comment" cols="10" rows="10" placeholder="Comment on this post"></textarea>

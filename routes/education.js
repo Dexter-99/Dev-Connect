@@ -58,4 +58,14 @@ router.get("/data/:id", isAuthenticated, (req, res) => {
     })
     .catch(err => res.send(err));
 });
+router.delete("/delete/:id", (req, res) => {
+  education
+    .remove({
+      _id: req.params.id
+    })
+    .then(item => {
+      console.log(item);
+      res.redirect("/dashboard");
+    });
+});
 module.exports = router;

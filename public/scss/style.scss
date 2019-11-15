@@ -354,6 +354,7 @@ a {
     padding: 1.5rem;
     margin: 1.2rem 0;
     border-radius: 10px;
+
     .person-post {
       display: grid;
       grid-template-columns: 1fr 4fr;
@@ -399,20 +400,89 @@ a {
       }
     }
   }
+  .post-comment {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 2.3rem;
+    align-items: center;
+    .user-image {
+      @include d-flex(column, none, center);
+      height: 150px;
+      width: 150px;
+      padding: 0.75rem;
+      img {
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .dark {
+        font-weight: 600;
+      }
+    }
+    .content {
+      .info {
+        padding: 0.75rem 0;
+        p {
+          color: $dark-color;
+          font-size: 1.2rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  .comment {
+    padding: 0.75rem 0.6rem;
+    @include d-flex(row, none, center);
+    width: 100%;
+    margin: 1rem 0;
+    .user-image {
+      @include d-flex(column, none, center);
+      height: 50px;
+      width: 50px;
+      padding: 0.45rem;
+      margin-right: 1rem;
+      img {
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .dark {
+        font-weight: 600;
+      }
+    }
+    .content {
+      .info {
+        padding: 0.75rem 0;
+        p {
+          color: $dark-color;
+          font-size: 1rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
 }
 .mb-top {
   margin-top: 4rem;
 }
 //Dashboard Pop-up
 .popup {
+  @include d-flex(row, center, center);
   background-color: red;
   width: 100vw;
   position: fixed;
   top: 71px;
   z-index: 2;
-  text-align: center;
   color: white;
   padding: 1rem;
+  .close-btn {
+    position: absolute;
+    right: 10px;
+  }
 }
 .G-login {
   font-size: 1.5rem;

@@ -18,14 +18,15 @@
         {{#each comments}}
 
         <div class="comment">
-             <div class="user-image">
-                <img src="{{post.user.image}}" alt="{{post.user.firstName}} {{post.user.lastName}}" />
-                <strong class="dark">{{post.user.firstName}} {{post.user.lastName}}</strong>
+            <div class="user-image">
+                <img src="{{this.commentUser.image}}"
+                    alt="{{this.commentUser.firstName}} {{this.commentUser.lastName}}" />
+                <strong class="dark">{{this.commentUser.firstName}} {{this.commentUser.lastName}}</strong>
             </div>
             <div class="content">
                 <div class="info">
                     <p>
-                        {{post.postBody}}
+                        {{this.commentBody}}
                     </p>
                 </div>
             </div>

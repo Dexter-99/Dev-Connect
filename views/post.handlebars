@@ -19,13 +19,19 @@
 
         <div class="comment">
             <div class="user-image">
+<<<<<<< HEAD
                 <img src="{{comment.user.image}}" alt="{{post.user.firstName}} {{post.user.lastName}}" />
                 <strong class="dark">{{post.user.firstName}} {{post.user.lastName}}</strong>
+=======
+                <img src="{{this.commentUser.image}}"
+                    alt="{{this.commentUser.firstName}} {{this.commentUser.lastName}}" />
+                <strong class="dark">{{this.commentUser.firstName}} {{this.commentUser.lastName}}</strong>
+>>>>>>> 0c3fb5dce16d0b58dd6da638046ecf7e42182ec1
             </div>
             <div class="content">
                 <div class="info">
                     <p>
-                        {{post.postBody}}
+                        {{this.commentBody}}
                     </p>
                 </div>
             </div>

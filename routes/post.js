@@ -17,6 +17,7 @@ router.get("/:id", isAuthenticated, (req, res) => {
         .populate("commentPost")
         .populate("commentUser")
         .then(data => {
+          console.log(data);
           res.render("post", {
             post: item,
             comments: data

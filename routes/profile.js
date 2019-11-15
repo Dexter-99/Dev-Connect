@@ -8,6 +8,8 @@ router.get("/", isAuthenticated, (req, res) => {
     })
     .populate("user")
     .then(profile => {
+      let skills = profile.skills;
+      console.log(skills);
       res.render("profile", {
         user: req.user,
         profile: profile

@@ -77,4 +77,17 @@ router.get("/skills/:id", (req, res) => {
       res.send(a);
     });
 });
+router.delete("/:id", (req, res) => {
+  profile
+    .findOne({
+      _id: req.params.id
+    })
+    .then(item => {
+      item.remove().then(item => {
+        console.log(item);
+
+        res.redirect("/dashboard");
+      });
+    });
+});
 module.exports = router;

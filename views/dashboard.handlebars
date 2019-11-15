@@ -58,9 +58,13 @@
 
             </tbody>
         </table>
-        <button type="submit" class="btn btn-danger">
-            <i class="fa fa-trash" aria-hidden="true"></i>Delete My Account
-        </button>
+
+        {{#if profile}}
+        <form action="/profile/{{profile.id}}?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-danger">
+                <i class="fa fa-trash" aria-hidden="true"></i>Delete My Account
+            </button>
+        </form>{{/if}}
     </div>
 
 </section>

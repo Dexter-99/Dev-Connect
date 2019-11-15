@@ -1,5 +1,3 @@
-import { close } from "inspector";
-
 const words = ["Post !", "Like !", "Comment !", "Share !"];
 let i = 0;
 let timer;

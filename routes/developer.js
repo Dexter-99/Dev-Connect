@@ -11,4 +11,12 @@ router.get("/", isAuthenticated, (req, res) => {
       res.render("developer", { profile: item });
     });
 });
+// router.get("/data", (req, res) => {
+//   profile
+//     .find({})
+//     .populate("user")
+//     .then(item => {
+//       res.send(item);
+//     });
+// });
 module.exports = router;

@@ -7,7 +7,7 @@
             Developers
         </p>
     </div>
-       {{#each profile}}
+    {{#each profile}}
     <div class="inner-content">
         <div class="developer bg-light">
             <img src="{{this.user.image}}" alt="Devansh gera" />
@@ -23,13 +23,14 @@
                 <a href="/profile/{{this.user.id}}" class="btn btn-primary">View Profile</a>
             </div>
             <div class="developer-skills col">
-                <span><i class="fas fa-check"></i>HTML</span>
-                <span><i class="fas fa-check"></i>CSS</span>
-                <span><i class="fas fa-check"></i>Javascript</span>
-                <span><i class="fas fa-check"></i>Node.js</span>
+                <span><i class="fas fa-check"></i>{{this.skills}}</span>
+
             </div>
         </div>
     </div>
+    <script>
+        fetch
+    </script>
 </section>{{/each}}
 {{else}}
 <p><strong>

@@ -20,11 +20,7 @@
             <p class="dark bio-p">{{profile.bio}}</p>
             <h3 class="sc-heading primary">Skill Set</h3>
             <div class="developer-skills row dark">
-                <span><i class="fas fa-check"></i>HTML</span>
-                <span><i class="fas fa-check"></i>CSS</span>
-                <span><i class="fas fa-check"></i>Javascript</span>
-                <span><i class="fas fa-check"></i>Bootstrap</span>
-                <span><i class="fas fa-check"></i>Sass</span>
+
             </div>
         </div>
         <div class="prsnl-info ">
@@ -50,7 +46,7 @@
 
             response.forEach(item => {
                 let li = document.createElement("li");
-                li.classList.add(".mb-1")
+                li.classList.add("mb-1")
                 let str = document.createElement("strong")
                 str.textContent = item.job + " At " + item.organization
                 li.appendChild(str)
@@ -81,5 +77,18 @@
                 document.querySelector(".edu-items").appendChild(li)
             })
         })
+        fetch("/profile/skills/{{profile.id}}").then(data => data.json()).then(item => {
+            let divdep = document.querySelector(".developer-skills")
+            item.forEach(value => {
+                let span = document.createElement("span");
+                let i = document.createElement("i");
+                i.classList.add("fas");
+                i.classList.add("fa-check")
+                span.appendChild(i);
+                divdep.appendChild(span);
+                span.appendChild(document.createTextNode(value))
+            })
+
+        });
     </script>
 </section>

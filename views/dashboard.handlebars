@@ -34,7 +34,7 @@
             <tbody class="exptable">
 
             </tbody>
-          </table>
+        </table>
         <h2 class="sc-heading dark ">Education Credentials</h2>
         <table class="table edu-table">
             <thead>
@@ -43,16 +43,16 @@
                 <th>Year</th>
                 <th></th>
             </thead>
-            <tbody>
+            <tbody class="edu-body">
                 <tr>
                     <td class="school"></td>
                     <td class="degree"></td>
                     <td class="from"></td>
                     <td class="to"></td>
                     <td>
-                        <form class="edu-delete" method="POST">
+                        {{!-- <form class="edu-delete" method="POST">
                             <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
+                        </form> --}}
                     </td>
                 </tr>
 
@@ -73,12 +73,42 @@
     let to = document.querySelector(".to");
     let form = document.createElement("form");
 
-    fetch("/education/data").then((res) => res.json()).then(data => {
+    fetch("/education/data/{{profile.user}}").then(res => { return res.json() }).then(data => {
+        let edutable = document.querySelector(".edu-body")
 
-        school.textContent = data.school;
-        degree.textContent = data.degree;
-        from.textContent = data.from;
-        to.textContent = data.to
+        data.forEach(item => {
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            let td3 = document.createElement("td");
+            let td4 = document.createElement("td");
+            let form = document.createElement("form");
+            form.setAttribute("action", "/education/delete/" + item._id + `?_method=DELETE`)
+            form.setAttribute("method", "POST")
+            let a = document.createElement("button");
+            a.textContent = "Delete"
+            a.classList.add("btn")
+            a.classList.add("btn-danger")
+            let input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", "_method");
+            input.setAttribute("value", "DELETE");
+            td1.textContent = item.school
+            td2.textContent = item.degree
+            form.appendChild(a);
+            let date = item.to;
+            let year = date.substring(0, date.indexOf("-"));
+            td3.textContent = year
+            td4.appendChild(form);
+            tr.appendChild(td1)
+            tr.appendChild(td2)
+            tr.appendChild(td3)
+            tr.appendChild(td4)
+            edutable.appendChild(tr);
+
+
+
+        })
 
     });
 
@@ -100,8 +130,9 @@
             input.setAttribute("value", "DELETE");
             td1.textContent = item.organization
             td2.textContent = item.job
-            td3.textContent = item.from
-            td4.textContent = item.to
+            td3.textContent = item.from.substring(0, item.from.indexOf("T"));
+            td4.textContent = item.to.substring(0, item.to.indexOf("T"));
+
             a.textContent = "Delete"
             a.classList.add("btn")
             a.classList.add("btn-danger")

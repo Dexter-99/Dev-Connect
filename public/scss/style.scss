@@ -184,12 +184,6 @@ a {
       }
     }
   }
-  .btn {
-    &:hover {
-      background: lighten($success-color, 5%);
-      color: #333;
-    }
-  }
   .developer {
     display: grid;
     width: 100%;
@@ -221,7 +215,7 @@ a {
     margin-top: 1rem;
     margin-bottom: 2rem;
     .btn {
-      margin-right: 0.5rem;
+      margin-right: 1rem;
       &:hover {
         background-color: lighten($dark-color, 5%);
         color: white;
@@ -232,11 +226,7 @@ a {
       }
     }
   }
-  .btn {
-    &:hover {
-      background-color: lighten($danger-color, 5%);
-    }
-  }
+
   .table {
     width: 80%;
     margin: 1rem 0rem;
@@ -420,8 +410,324 @@ a {
   position: fixed;
   top: 71px;
   z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 1rem;
 }
 .G-login {
   font-size: 1.5rem;
   border-radius: 4px;
+}
+
+// Responsive
+@media only screen and (max-width: 700px) {
+  #navNavbar {
+    #nav-content {
+      @include d-flex(column, none, none);
+      #dashboard {
+        font-size: 1rem;
+        text-align: center;
+        padding: 0.5rem 0;
+      }
+      ul {
+        @include d-flex(row, none, none);
+        li {
+          font-size: 0.8rem;
+          font-weight: 400;
+          padding: 0.75rem 0.6rem;
+        }
+      }
+    }
+  }
+  .popup {
+    padding: 0.5rem 0;
+    font-size: 0.5rem;
+    top: 87px;
+    z-index: 2;
+  }
+  #header {
+    #dark-overlay {
+      #header-content {
+        #primary-heading {
+          font-size: 2rem;
+        }
+        #sub-heading {
+          height: 18px;
+          font-size: 1rem;
+          color: $primary-color;
+          margin-bottom: 0.75rem;
+        }
+        #buttons {
+          width: 100%;
+          margin-top: 1.5rem;
+          @include d-flex(row, center, center);
+          a {
+            text-align: center;
+            color: black;
+            padding: 0.3rem 0.75rem;
+            border-radius: 5px;
+          }
+          #login-btn {
+            margin-right: 0;
+          }
+        }
+        p.lead {
+          font-size: 0.75rem;
+          line-height: 1.3rem;
+        }
+      }
+    }
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .inner-content {
+    width: 100%;
+    height: inherit;
+    overflow-x: auto;
+    overflow-y: scroll;
+    @include d-flex(column, flex-start, flex-start);
+    .lead {
+      font-size: 1rem;
+    }
+    .fa-user {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    .developer {
+      @include d-flex(column, center, center);
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      img {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      .developer-info {
+        margin-bottom: 1rem;
+        padding-left: 0;
+        @include d-flex(column, center, center);
+        .fa {
+          margin-right: 0.75rem;
+        }
+        h3 {
+          font-size: 0.9rem;
+          margin-bottom: 0.5rem;
+        }
+        a {
+          margin-top: 0.45rem;
+          margin-bottom: 0;
+          font-size: 0.75rem;
+        }
+      }
+      .developer-skills {
+        @include d-flex(row, space-between, center);
+        span {
+          margin-right: 0.3rem;
+        }
+        .fas {
+          margin-right: 0.3rem;
+          color: $success-color;
+        }
+      }
+    }
+    .dashboard-links {
+      @include d-flex(row, space-between, none);
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      .btn {
+        margin-right: 0.5rem;
+        padding: 0.25rem;
+        font-size: 0.75rem;
+      }
+    }
+    .table {
+      width: 100%;
+      margin: 1rem 0rem;
+      thead,
+      tbody {
+        width: 100%;
+      }
+      th {
+        width: inherit;
+        padding: 0.3rem;
+        margin-left: 0.5rem;
+        background-color: $light-color;
+      }
+      td {
+        padding: 0.45rem 0.6rem;
+        margin-left: 0.5rem;
+      }
+    }
+    .fa {
+      margin-right: 0.5rem;
+    }
+    .btn-primary {
+      display: block;
+      margin-bottom: 1.5rem;
+      &:hover {
+        background-color: lighten($primary-color, 5%);
+        color: #333;
+      }
+    }
+    .btn-light {
+      &:hover {
+        background-color: lighten($dark-color, 5%);
+        color: white;
+      }
+      .fas {
+        margin-right: 0.5rem;
+      }
+    }
+    .url-link {
+      margin-right: 1.1rem;
+      &.fa-twitter {
+        color: #38a1f3;
+      }
+      &.fa-facebook {
+        color: #3b5998;
+      }
+      &.fa-youtube {
+        color: #c4302b;
+      }
+      &.fa-linkedin {
+        color: #0077b5;
+      }
+      &.fa-instagram {
+        color: #3f729b;
+      }
+    }
+    .profile-menu {
+      width: 100%;
+      color: white;
+      padding: 2rem;
+      height: inherit;
+      border-radius: 10px;
+      text-align: center;
+      @include d-flex(column, center, center);
+      margin: 1.3rem 0rem;
+      img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+      }
+      .profile-menu-icon {
+        @include d-flex(row, none, center);
+        margin-top: 1rem;
+      }
+      .fab {
+        color: white;
+        margin-right: 0.75rem;
+      }
+      .bio-p {
+        padding-bottom: 1.5rem;
+        border-bottom: solid 1px #546e7a;
+      }
+    }
+    .prsnl-info {
+      width: 100%;
+      @include d-flex(column, none, none);
+      .scroll {
+        overflow-x: hidden;
+      }
+      .info {
+        @include d-flex(column, flex-start, space-between);
+        padding: 2rem;
+        height: 400px;
+        margin-bottom: 1rem;
+        li {
+          border-bottom: solid 1px #546e7a;
+        }
+        .mb-1 {
+          margin-bottom: 1.5rem;
+        }
+        .mb-2 {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    .btn-dark {
+      &:hover {
+        background-color: $dark-color;
+        color: white;
+      }
+    }
+    .post {
+      padding: 1rem;
+      margin: 0.75rem 0;
+      width: 100%;
+      border-radius: 5px;
+      .person-post {
+        @include d-flex(column, center, center);
+        .user-image {
+          height: 100%;
+          width: 100%;
+          padding: 0.35rem;
+          margin-bottom: 0.3rem;
+          h4 {
+            width: 100%;
+            font-size: 0.75rem;
+            text-align: center;
+          }
+          img {
+            height: 50px;
+            width: 50px;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            margin: auto;
+          }
+          .dark {
+            font-weight: 600;
+          }
+        }
+        .content {
+          width: 100%;
+          .info {
+            margin-bottom: 0.45rem;
+            width: inherit;
+            padding: 0 0;
+            p {
+              width: inherit;
+              color: $dark-color;
+              font-size: 1rem;
+              font-weight: 500;
+            }
+          }
+          .rate {
+            margin-bottom: 0.45rem;
+            margin-right: 0;
+            .btn-dark {
+              padding: 0.45rem 0.6rem;
+              font-size: 0.75rem;
+            }
+            .discuss {
+              margin-top: 0.45rem;
+              margin-bottom: 0;
+              width: 40%;
+              padding: 0.5rem 0.6rem;
+              font-size: 0.9rem;
+              border-radius: 4px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .py-heading {
+    font-size: 1.5rem;
+    margin: 0.75rem 0;
+  }
+  .sc-heading {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+  #profile-back-btn {
+    margin-top: 2rem;
+  }
 }
